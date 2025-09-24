@@ -1,0 +1,24 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/nesbot/carbon/extension.neon
+
+parameters:
+
+    paths:
+        - app/
+
+    # Level 10 is the highest level
+    level: 10
+
+    ignoreErrors:
+        - '#PHPDoc tag @var#'
+        - '#Cannot access property \$email on mixed\.#'
+        - '#Call to an undefined method Illuminate\\\\Support\\\\Facades\\\\[A-Za-z]+::[A-Za-z]+#'
+        - '#Service \"[A-Za-z\\\\]+\" not found in container#'
+        - '#Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Collection::[A-Za-z]+#'
+        - '#Call to an undefined method [A-Za-z\\\\]+::[A-Za-z]+\\(\\)#'
+        - '#Call to an undefined method .*Blade::[A-Za-z]+#'
+        - '#Function (view|response|abort) not found#'
+        - '#Access to an undefined property [A-Za-z\\\\]+::\$[A-Za-z]+#'
+
+    reportUnmatchedIgnoredErrors: false
